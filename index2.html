@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Header with Image Logo</title>
+    <style>
+        /* 1. Reset styles for a clean layout */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 2. MAKE THE HEADER STICKY */
+        header {
+            position: fixed;        /* Fixes the header to the viewport */
+            top: 0;                 /* Sticks it to the very top */
+            left: 0;
+            width: 100%;            /* Spans full width */
+            background-color: #333;
+            color: white;
+            padding: 10px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;          /* Ensures it stays on top of other content */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3); /* Adds depth */
+        }
+
+        /* 3. Style the clickable image logo */
+        .logo a img {
+            height: 40px;           /* Adjust this height to fit your layout */
+            display: block;         /* Removes unwanted bottom spaces */
+        }
+
+        /* 4. Style the navigation menu */
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-family: sans-serif;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        /* 5. CRITICAL: Add top padding to the body so the header 
+           doesn't accidentally cover up the page content below it */
+        body {
+            padding-top: 70px;     /* Match this roughly to your header's height */
+            font-family: sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Placeholder style just to let you test the scrolling */
+        .content-box {
+            padding: 40px 50px;
+            height: 1500px; /* Forces a scrollbar */
+            background: linear-gradient(to bottom, #f9f9f9, #ddd);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- STICKY HEADER -->
+    <header>
+        <div class="logo">
+            <!-- Clickable Image Logo linking to the Homepage -->
+            <a href="index.html">
+                <img src="https://placeholder.com" alt="Company Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN PAGE CONTENT -->
+    <main class="content-box">
+        <h2>Scroll down to see the header stay in place!</h2>
+        <p>This layout uses CSS fixed positioning to keep the menu accessible at all times.</p>
+    </main>
+
+</body>
+</html>
